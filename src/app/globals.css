@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   IBE Biomedical Solutions — Design tokens
+   Paleta extraída de la guía de marca oficial.
+   ============================================================ */
+@theme {
+  /* Marca — azules */
+  --color-navy: #002460;
+  --color-navy-deep: #001a47;
+  --color-navy-ink: #0a1730;
+  --color-royal: #002478;
+  --color-steel: #00549c;
+
+  /* Marca — acento tech (cruz / circuito) */
+  --color-teal: #0098a8;
+  --color-teal-bright: #00b3c6;
+  --color-cyan: #6cd8d8;
+
+  /* Neutros */
+  --color-ink: #0c1626;
+  --color-slate: #56616f;
+  --color-slate-light: #8a94a1;
+  --color-line: #e3e9ef;
+  --color-line-soft: #eef2f6;
+  --color-paper: #f6f8fb;
+  --color-paper-2: #eaeff5;
+  --color-paper-warm: #f9fafc;
+
+  /* Tipografía */
+  --font-heading: var(--font-montserrat), "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, "Cascadia Code", monospace;
+
+  /* Radios y sombras */
+  --radius-card: 4px;
+  --shadow-soft: 0 1px 2px rgba(10, 23, 48, 0.04), 0 8px 24px -12px rgba(10, 23, 48, 0.12);
+  --shadow-lift: 0 2px 4px rgba(10, 23, 48, 0.05), 0 18px 40px -18px rgba(10, 23, 48, 0.22);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: var(--color-navy-ink);
+  }
+
+  ::selection {
+    background: var(--color-teal);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Etiqueta técnica monoespaciada — recurso de marca "blueprint" */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    font-weight: 500;
+  }
+
+  .eyebrow-index {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--color-slate-light);
+  }
+
+  /* Trama de retícula sutil tipo plano de ingeniería */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, rgba(0, 36, 96, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 36, 96, 0.04) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius-card);
+    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--color-navy); color: #fff; }
+  .btn-primary:hover { background: var(--color-navy-deep); transform: translateY(-1px); }
+
+  .btn-accent { background: var(--color-teal); color: #fff; }
+  .btn-accent:hover { background: var(--color-teal-bright); transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid var(--color-line);
+    color: var(--color-navy);
+    background: #fff;
+  }
+  .btn-ghost:hover { border-color: var(--color-navy); transform: translateY(-1px); }
+
+  .link-underline {
+    background-image: linear-gradient(var(--color-teal), var(--color-teal));
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  .link-underline:hover { background-size: 100% 1.5px; }
+}
+
+/* Prosa de páginas legales */
+.legal-prose {
+  color: var(--color-slate);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.legal-prose h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-navy-ink);
+  margin-top: 2.75rem;
+  margin-bottom: 0.75rem;
+  scroll-margin-top: 6rem;
+}
+.legal-prose h2:first-child { margin-top: 0; }
+.legal-prose h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-navy-ink);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.legal-prose p { margin-bottom: 1rem; }
+.legal-prose ul {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+.legal-prose li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.55rem;
+}
+.legal-prose li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66em;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--color-teal);
+}
+.legal-prose a {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-prose strong { color: var(--color-navy-ink); font-weight: 600; }
+
+/* Revelado sutil al hacer scroll.
+   Por defecto el contenido es visible (a prueba de no-JS / SEO).
+   Solo se oculta cuando el documento tiene la clase .js (mejora progresiva). */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

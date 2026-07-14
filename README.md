@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IBE Biomedical Solutions — Sitio web
 
-## Getting Started
+Sitio corporativo de servicios profesionales de ingeniería biomédica, construido con
+**Next.js 16 (App Router)**, **React 19**, **TypeScript** y **Tailwind CSS v4**.
 
-First, run the development server:
+## Identidad de marca
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+La paleta y la tipografía se extrajeron de la guía de marca oficial:
+
+| Token | Uso | Hex |
+| --- | --- | --- |
+| `navy` | Color primario | `#002460` |
+| `royal` | Profundidad | `#002478` |
+| `steel` | Secundario | `#00549c` |
+| `teal` | Acento (cruz tech del logo) | `#0098a8` |
+| `cyan` | Highlights | `#6cd8d8` |
+| `ink` / `slate` / `line` / `paper` | Neutros | — |
+
+- **Títulos:** Montserrat (600–800)
+- **Cuerpo:** Inter
+- **Etiquetas técnicas:** JetBrains Mono
+
+Todos los tokens viven en `src/app/globals.css` (`@theme`).
+
+## Estructura
+
+```
+src/
+  app/
+    layout.tsx          Layout raíz: fuentes, SEO, Header, Footer
+    page.tsx            Home (ensambla las secciones)
+    privacidad/         Política de Privacidad
+    terminos/           Términos y Condiciones
+    api/contact/        Endpoint del formulario (validación en servidor)
+  components/
+    Header / Footer / Logo / Icons (SVG propios, sin emojis)
+    Reveal              Animación de entrada (mejora progresiva)
+    ContactForm         Formulario con validación cliente + servidor
+    sections/           Hero, Services, Approach, Sectors, About, Contact
+  lib/
+    site.ts             Contenido central y datos de contacto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de producción
+npm start        # servir el build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Antes de publicar
 
-## Learn More
+1. **Datos de contacto:** edita `src/lib/site.ts` (correo, teléfono, ubicación, horario).
+2. **Envío de correo:** conecta tu proveedor en `src/app/api/contact/route.ts`
+   (Resend, SendGrid, SMTP, etc.) y define las variables de entorno.
+3. **Textos legales:** las páginas de Términos y Privacidad son plantillas de
+   referencia; deben ser revisadas y adaptadas por un asesor legal.
+4. **Dominio:** actualiza `site.url` en `src/lib/site.ts` para SEO/Open Graph.
 
-To learn more about Next.js, take a look at the following resources:
+## Decisiones de UI/UX
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Estética "blueprint" de ingeniería clínica: retícula sutil, etiquetas
+  monoespaciadas y secciones numeradas.
+- Iconografía vectorial propia y coherente (sin emojis ni librerías de iconos).
+- Layout editorial asimétrico, jerarquía tipográfica marcada y mucho espacio en blanco.
+- Accesibilidad: HTML semántico, foco visible, `prefers-reduced-motion`, contraste alto,
+  y contenido visible sin JavaScript.
