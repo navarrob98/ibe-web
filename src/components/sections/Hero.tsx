@@ -68,7 +68,7 @@ function MonitorPanel() {
         {/* barra superior del panel */}
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-cyan">
-            Monitor · IBE-04
+            Monitor · IBEX-04
           </span>
           <span className="flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-white/55">
             <span className="h-1.5 w-1.5 rounded-full bg-teal" /> Operativo

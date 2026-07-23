@@ -106,7 +106,7 @@ export async function POST(request: Request) {
     ];
 
     await transporter.sendMail({
-      from: `IBE Biomedical Solutions <${from}>`,
+      from: `IBEX Biomedical Solutions <${from}>`,
       to: inbox,
       replyTo: `${submission.name} <${submission.email}>`,
       subject: `Nueva solicitud de contacto — ${submission.name}`,

@@ -76,7 +76,7 @@ export function ContactForm() {
         </span>
         <h3 className="mt-5 text-xl font-bold text-navy-ink">Mensaje recibido</h3>
         <p className="mt-2 max-w-sm text-slate">
-          Gracias por escribirnos. Un especialista de IBE te contactará dentro del siguiente día
+          Gracias por escribirnos. Un especialista de IBEX Biomedical Solutions te contactará dentro del siguiente día
           hábil.
         </p>
         <button
@@ -187,7 +187,7 @@ export function ContactForm() {
           />
           <span>
             Autorizo a {""}
-            <span className="font-medium text-navy-ink">IBE Biomedical Solutions</span> a contactarme
+            <span className="font-medium text-navy-ink">IBEX Biomedical Solutions</span> a contactarme
             y acepto la{" "}
             <Link href="/privacidad" className="link-underline font-medium text-navy">
               Política de Privacidad

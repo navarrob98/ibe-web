@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
   description:
-    "Condiciones de uso del sitio web de IBE Biomedical Solutions y de la información que en él se ofrece.",
+    "Condiciones de uso del sitio web de IBEX Biomedical Solutions y de la información que en él se ofrece.",
 };
 
 export default function TerminosPage() {

@@ -13,9 +13,9 @@ export function Footer() {
           <div className="md:col-span-5">
             <Image
               src="/brand/logo-horizontal-light.png"
-              alt="IBE Biomedical Solutions"
-              width={421}
-              height={119}
+              alt="IBEX Biomedical Solutions"
+              width={1200}
+              height={300}
               className="h-11 w-auto"
             />
             <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-white/65">

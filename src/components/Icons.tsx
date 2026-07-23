@@ -1,5 +1,5 @@
 /**
- * Iconografía propia de IBE — trazo coherente (1.6px), 24×24, currentColor.
+ * Iconografía propia de IBEX — trazo coherente (1.6px), 24×24, currentColor.
  * Sin librerías externas ni emojis: cada icono está dibujado a mano.
  */
 import type { SVGProps } from "react";

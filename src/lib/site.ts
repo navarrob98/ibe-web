@@ -4,18 +4,18 @@
  */
 
 export const site = {
-  name: "IBE Biomedical Solutions",
-  shortName: "IBE",
-  descriptor: "Ingeniería Biomédica Especializada",
+  name: "IBEX Biomedical Solutions",
+  shortName: "IBEX",
+  descriptor: "Ingeniería Biomédica de Excelencia",
   claim: "Soluciones inteligentes de tecnología para salvar vidas",
   values: ["Innovación", "Precisión", "Confianza"],
   url: "https://www.ibebiomedic.com",
 
   contact: {
     email: "contacto@ibebiomedic.com",
-    phone: "+52 55 0000 0000",
-    phoneHref: "+525500000000",
-    whatsapp: "+52 55 0000 0000",
+    phone: "+52 664 504 3057",
+    phoneHref: "+526645043057",
+    whatsapp: "+52 664 504 3057",
     location: "Tijuana, Baja California, México",
     hours: "Lunes a viernes, 9:00 – 18:00",
   },

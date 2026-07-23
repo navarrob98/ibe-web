@@ -1,0 +1,11 @@
+{
+  "name": "IBEX Biomedical Solutions",
+  "short_name": "IBEX",
+  "icons": [
+    {"src": "/logo/android-chrome-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/logo/android-chrome-512.png", "sizes": "512x512", "type": "image/png"}
+  ],
+  "theme_color": "#032763",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

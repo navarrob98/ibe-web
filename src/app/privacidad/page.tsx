@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Política de Privacidad",
   description:
-    "Cómo IBE Biomedical Solutions recopila, usa y protege tus datos personales conforme a la normativa aplicable.",
+    "Cómo IBEX Biomedical Solutions recopila, usa y protege tus datos personales conforme a la normativa aplicable.",
 };
 
 export default function PrivacidadPage() {
@@ -16,7 +16,7 @@ export default function PrivacidadPage() {
       updated="5 de junio de 2026"
     >
       <p>
-        En <strong>{site.name}</strong> (en adelante, “IBE”, “nosotros”) respetamos tu privacidad y
+        En <strong>{site.name}</strong> (en adelante, “IBEX”, “nosotros”) respetamos tu privacidad y
         nos comprometemos a proteger los datos personales que nos confías a través de este sitio web.
         Esta política describe el tratamiento que damos a dicha información.
       </p>
