@@ -2,8 +2,8 @@ import { site } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 
 const valueDetails: Record<string, string> = {
-  Innovación:
-    "Incorporamos herramientas y métodos actuales para anticipar fallas y extender la vida útil del equipo.",
+  Ingeniería:
+    "Aplicamos rigor de ingeniería biomédica en cada intervención, con procedimientos documentados y decisiones basadas en datos.",
   Precisión:
     "Trabajamos con instrumentos calibrados y procedimientos verificables. Cada dato queda registrado.",
   Confianza:

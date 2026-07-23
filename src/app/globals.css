@@ -132,6 +132,17 @@
   }
   .btn-ghost:hover { border-color: var(--color-navy); transform: translateY(-1px); }
 
+  .btn-ghost-accent {
+    border: 1.5px solid var(--color-teal);
+    color: var(--color-teal);
+    background: color-mix(in srgb, var(--color-teal) 6%, #fff);
+  }
+  .btn-ghost-accent:hover {
+    background: var(--color-teal);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
   .link-underline {
     background-image: linear-gradient(var(--color-teal), var(--color-teal));
     background-size: 0% 1.5px;

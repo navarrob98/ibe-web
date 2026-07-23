@@ -55,6 +55,10 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link href={site.portalUrl} className="btn btn-ghost-accent">
+            Portal de Clientes
+            <IconArrowUpRight width={16} height={16} />
+          </Link>
           <Link href="/#contacto" className="btn btn-primary">
             Solicitar diagnóstico
             <IconArrowUpRight width={16} height={16} />
@@ -101,13 +105,22 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Link
-            href="/#contacto"
-            onClick={() => setOpen(false)}
-            className="btn btn-primary my-5 w-full"
-          >
-            Solicitar diagnóstico
-          </Link>
+          <div className="my-5 flex flex-col gap-3">
+            <Link
+              href="/#contacto"
+              onClick={() => setOpen(false)}
+              className="btn btn-primary w-full"
+            >
+              Solicitar diagnóstico
+            </Link>
+            <Link
+              href={site.portalUrl}
+              onClick={() => setOpen(false)}
+              className="btn btn-ghost-accent w-full"
+            >
+              Portal de Clientes
+            </Link>
+          </div>
         </div>
       </div>
     </header>
