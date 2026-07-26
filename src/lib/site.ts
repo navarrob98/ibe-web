@@ -9,9 +9,8 @@ export const site = {
   descriptor: "Ingeniería Biomédica de Excelencia",
   claim: "Soluciones inteligentes de tecnología para salvar vidas",
   values: ["Ingeniería", "Precisión", "Confianza"],
-  url: "https://www.ibebiomedic.com",
-  // TODO: reemplazar con la URL real del Portal de Clientes en cuanto esté publicado.
-  portalUrl: "#",
+  url: "https://ibexbiomedical.com",
+  portalUrl: "https://portal.ibexbiomedical.com",
 
   contact: {
     email: "contacto@ibebiomedic.com",
