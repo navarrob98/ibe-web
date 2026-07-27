@@ -40,14 +40,16 @@ function fixPerms(rel) {
 [".next", "public"].forEach(fixPerms);
 
 const port = process.env.PORT || 3000;
-const app = next({ dev: false });
+// Passenger puede iniciar Node con un directorio de trabajo distinto al
+// Application root. Fijar `dir` evita que Next cargue un build anterior.
+const app = next({ dev: false, dir: __dirname });
 const handle = app.getRequestHandler();
 
 app
   .prepare()
   .then(() => {
     createServer((req, res) => handle(req, res)).listen(port, () => {
-      console.log(`> IBE web lista en el puerto ${port}`);
+      console.log(`> IBEX web lista en el puerto ${port}`);
     });
   })
   .catch((err) => {
