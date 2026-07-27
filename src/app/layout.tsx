@@ -27,6 +27,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  applicationName: site.name,
   title: {
     default: `${site.name} — ${site.descriptor}`,
     template: `%s — ${site.name}`,
