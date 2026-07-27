@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://ibexbiomedical.com
+Sitemap: https://ibexbiomedical.com/sitemap.xml
