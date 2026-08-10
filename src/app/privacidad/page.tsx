@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Aviso de privacidad provisional",
   description:
     "Aviso de privacidad provisional del sitio de IBEX Biomedical Solutions: qué datos se recopilan a través del formulario de contacto y con qué fin.",
+  alternates: { canonical: "/privacidad" },
 };
 
 // NOTA INTERNA: este aviso lo redactó el propio proyecto a partir de los

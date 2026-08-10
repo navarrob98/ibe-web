@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Términos y Condiciones (documento provisional)",
   description:
     "Condiciones provisionales de uso del sitio web de IBEX Biomedical Solutions y de la información que en él se ofrece.",
+  alternates: { canonical: "/terminos" },
 };
 
 // NOTA INTERNA: documento provisional redactado a partir de la información

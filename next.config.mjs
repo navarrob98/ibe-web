@@ -52,6 +52,28 @@ const nextConfig = {
     cpus: 1,
     webpackMemoryOptimizations: true,
   },
+  // ibebiomedic.com es el dominio original de la cuenta de hosting; hoy
+  // sirve la misma app que ibexbiomedical.com, por eso Google indexó el
+  // dominio viejo pese a la etiqueta canonical. La sola etiqueta canonical
+  // no basta cuando los dos dominios responden 200: hace falta una
+  // redirección real para que los buscadores actualicen el índice.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "ibebiomedic.com" }],
+        destination: "https://ibexbiomedical.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.ibebiomedic.com" }],
+        destination: "https://ibexbiomedical.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
