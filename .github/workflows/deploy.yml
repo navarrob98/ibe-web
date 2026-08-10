@@ -1,0 +1,60 @@
+name: Deploy a Namecheap (cPanel)
+
+# Se ejecuta solo con el push a master, o manualmente desde la pestaña
+# "Actions" de GitHub (botón "Run workflow").
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build de producción
+        run: npm run build
+
+      # Solo lo necesario para correr server.js en el hosting, sin
+      # node_modules (cPanel las instala con "Run NPM Install" o npm ci
+      # no aplica aquí porque el paso de FTP no ejecuta comandos remotos).
+      - name: Preparar archivos a desplegar
+        run: |
+          mkdir -p deploy
+          cp -r .next deploy/.next
+          cp -r public deploy/public
+          cp next.config.mjs deploy/next.config.mjs
+          cp server.js deploy/server.js
+          cp package.json deploy/package.json
+          cp package-lock.json deploy/package-lock.json
+
+      - name: Subir por FTPS a Namecheap
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./deploy/
+          protocol: ftps
+
+      # IMPORTANTE: esto sube los archivos nuevos, pero el proceso de Node
+      # (Passenger) sigue corriendo con el código viejo en memoria hasta
+      # que se reinicia. Sin acceso SSH no podemos automatizar ese
+      # reinicio desde aquí: entra a cPanel → "Setup Node.js App" → tu
+      # app → botón "Restart" después de cada deploy para que el cambio
+      # se vea reflejado en el sitio.
