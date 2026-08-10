@@ -168,6 +168,34 @@ export function IconWhatsApp(props: IconProps) {
   );
 }
 
+export function IconVitalSigns(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3.5" y="5" width="17" height="14" rx="2" />
+      <path d="M6.5 12.3h2.1l1.3-3.6 1.8 7 1.3-3.4h5" />
+    </svg>
+  );
+}
+
+export function IconOxygen(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3.3c2.9 3.7 5.3 6.9 5.3 9.7a5.3 5.3 0 1 1-10.6 0c0-2.8 2.4-6 5.3-9.7Z" />
+      <path d="M9.3 14.8h1.5l.7-1.7 1 3.4.7-1.7h1.4" />
+    </svg>
+  );
+}
+
+export function IconElectricalSafety(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M8.3 3v3.6M13.7 3v3.6" />
+      <path d="M6 6.6h10a1.6 1.6 0 0 1 1.6 1.6v.8A6.6 6.6 0 0 1 11 15.6a6.6 6.6 0 0 1-6.6-6.6v-.8A1.6 1.6 0 0 1 6 6.6Z" />
+      <path d="M12 15.6 9.6 19.8h2.7l-1 3.2 4-5.6h-2.7Z" />
+    </svg>
+  );
+}
+
 export const serviceIcons = {
   mantenimiento: IconMaintenance,
   calibracion: IconCalibration,

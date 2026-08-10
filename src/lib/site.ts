@@ -204,11 +204,13 @@ export const capabilities = [
 ];
 
 /** Instrumentación técnica disponible — sin afirmar calibración o acreditación vigente. */
-export const instruments = [
-  { model: "Pronk SimCube", use: "Simulación de paciente" },
-  { model: "Pronk SimSlim 8", use: "Simulación de paciente" },
-  { model: "Pronk OxSim", use: "Evaluación de oximetría" },
-  { model: "Fluke ESA612", use: "Pruebas de seguridad eléctrica" },
+export type InstrumentUse = "Simulación de paciente" | "Evaluación de oximetría" | "Pruebas de seguridad eléctrica";
+
+export const instruments: { maker: string; model: string; use: InstrumentUse }[] = [
+  { maker: "Pronk Technologies", model: "SimCube", use: "Simulación de paciente" },
+  { maker: "Pronk Technologies", model: "SimSlim 8", use: "Simulación de paciente" },
+  { maker: "Pronk Technologies", model: "OxSim", use: "Evaluación de oximetría" },
+  { maker: "Fluke Biomedical", model: "ESA612", use: "Pruebas de seguridad eléctrica" },
 ];
 
 /** Contenido del módulo CMMS — todos los datos mostrados son demostrativos. */
