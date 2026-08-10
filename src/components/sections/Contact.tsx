@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
-import { IconMail, IconPhone, IconPin, IconClock } from "@/components/Icons";
+import { IconMail, IconPhone, IconPin } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export function Contact() {
@@ -10,11 +10,11 @@ export function Contact() {
           <div className="lg:col-span-5">
             <span className="eyebrow">Contacto</span>
             <h2 className="mt-4 text-[2rem] font-extrabold leading-tight text-navy-ink sm:text-[2.5rem]">
-              Hablemos de tu parque tecnológico
+              Conversemos sobre las necesidades de tu institución
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate">
-              Cuéntanos qué necesitas y te proponemos un plan de diagnóstico sin compromiso.
-              Respondemos en menos de 24 horas hábiles.
+              Registra tu interés para conocer el modelo, hablar sobre tu inventario o recibir un
+              aviso cuando iniciemos operaciones.
             </p>
 
             <ul className="mt-10 space-y-6">
@@ -30,9 +30,6 @@ export function Contact() {
               </ContactItem>
               <ContactItem icon={<IconPin width={20} height={20} />} label="Ubicación">
                 {site.contact.location}
-              </ContactItem>
-              <ContactItem icon={<IconClock width={20} height={20} />} label="Horario">
-                {site.contact.hours}
               </ContactItem>
             </ul>
           </div>

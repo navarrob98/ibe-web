@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Montserrat, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -25,29 +26,40 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#002460",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   applicationName: site.name,
   title: {
-    default: `${site.name} — ${site.descriptor}`,
+    default: "IBEX Biomedical Solutions | Gestión biomédica en Tijuana",
     template: `%s — ${site.name}`,
   },
   description:
-    "Ingeniería biomédica especializada: mantenimiento, calibración, gestión y cumplimiento del equipo médico. Mantenemos tu tecnología clínica segura, disponible y en norma.",
+    "Próximo inicio de operaciones en Tijuana y Baja California. Mantenimiento, verificaciones técnicas y trazabilidad digital para la gestión de equipo médico.",
   keywords: [
-    "ingeniería biomédica",
-    "mantenimiento equipo médico",
-    "calibración equipo médico",
+    "ingeniería biomédica Tijuana",
+    "mantenimiento de equipo médico Baja California",
+    "calibración de equipo médico",
     "gestión de tecnología biomédica",
-    "servicios biomédicos",
+    "CMMS biomédico",
   ],
   authors: [{ name: site.name }],
   openGraph: {
     type: "website",
     locale: "es_MX",
-    title: `${site.name} — ${site.descriptor}`,
-    description: site.claim,
+    title: "IBEX Biomedical Solutions | Gestión biomédica en Tijuana",
+    description:
+      "Próximo inicio de operaciones en Tijuana y Baja California. Mantenimiento, verificaciones técnicas y trazabilidad digital para la gestión de equipo médico.",
     siteName: site.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IBEX Biomedical Solutions | Gestión biomédica en Tijuana",
+    description:
+      "Próximo inicio de operaciones en Tijuana y Baja California. Mantenimiento, verificaciones técnicas y trazabilidad digital para la gestión de equipo médico.",
   },
   robots: { index: true, follow: true },
 };
@@ -60,13 +72,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${montserrat.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js');",
-          }}
-        />
+        {/* Se sirve como archivo externo (no inline) para cumplir con la CSP. */}
+        <Script src="/js-detect.js" strategy="beforeInteractive" />
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-navy focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white"
+        >
+          Saltar al contenido
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="contenido" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

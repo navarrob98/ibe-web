@@ -215,3 +215,24 @@ html.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Vista de demostración animada del CMMS (cambio de pestaña + barra de progreso).
+   prefers-reduced-motion ya queda cubierto por la regla global de arriba
+   (fuerza animation-duration a ~0 para *, incluidas estas clases). */
+@keyframes cmms-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.cmms-fade-in {
+  animation: cmms-fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cmms-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+.cmms-progress-fill {
+  animation-name: cmms-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}

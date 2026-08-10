@@ -3,11 +3,11 @@ import { Reveal } from "@/components/Reveal";
 
 const valueDetails: Record<string, string> = {
   Ingeniería:
-    "Aplicamos rigor de ingeniería biomédica en cada intervención, con procedimientos documentados y decisiones basadas en datos.",
+    "El servicio se diseña con rigor de ingeniería biomédica: procedimientos documentados y decisiones basadas en datos técnicos.",
   Precisión:
-    "Trabajamos con instrumentos calibrados y procedimientos verificables. Cada dato queda registrado.",
+    "La instrumentación y los procedimientos de verificación están pensados para dejar cada dato registrado y consultable.",
   Confianza:
-    "Construimos relaciones de largo plazo basadas en transparencia, cumplimiento y respuesta puntual.",
+    "El modelo se construye sobre transparencia y documentación verificable, no sobre promesas sin evidencia.",
 };
 
 export function About() {
@@ -18,15 +18,16 @@ export function About() {
           <div className="lg:col-span-5">
             <span className="eyebrow">Nosotros</span>
             <h2 className="mt-4 text-[2rem] font-extrabold leading-tight text-navy-ink sm:text-[2.5rem]">
-              Ingeniería al servicio de la vida
+              Ingeniería biomédica con una operación diseñada desde la trazabilidad
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-slate">
-              {site.name} nace de la convicción de que la tecnología médica solo cumple su propósito
-              cuando funciona de forma segura y continua. Combinamos conocimiento de ingeniería
-              biomédica con una operación disciplinada y cercana.
+              {site.name} está preparando su inicio de operaciones en Tijuana con un enfoque
+              claro: integrar el servicio técnico y la documentación de cada equipo en un proceso
+              ordenado, transparente y verificable.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-slate">
-              No vendemos cajas: cuidamos el equipo que sostiene cada diagnóstico y cada tratamiento.
+              No se trata solo de intervenir el equipo médico, sino de dejar evidencia de cada
+              intervención.
             </p>
 
             <blockquote className="mt-9 border-l-2 border-teal pl-5">

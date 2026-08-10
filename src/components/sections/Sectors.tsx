@@ -1,35 +1,27 @@
-import { sectors, capabilities } from "@/lib/site";
+import { institutionTypes } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 import { IconPlus } from "@/components/Icons";
 
 export function Sectors() {
   return (
-    <section id="sectores" className="scroll-mt-20 border-b border-line bg-paper py-20 lg:py-28">
+    <section id="instituciones" className="scroll-mt-20 border-b border-line bg-paper py-20 lg:py-28">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <span className="eyebrow">Sectores</span>
+            <span className="eyebrow">Instituciones</span>
             <h2 className="mt-4 text-[2rem] font-extrabold leading-tight text-navy-ink sm:text-[2.5rem]">
-              Donde la tecnología no puede fallar
+              Diseñado para instituciones que necesitan mayor control documental
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate">
-              Acompañamos a instituciones de salud de distinta escala. Adaptamos el alcance del
-              servicio a la criticidad de cada área.
+              Hospitales, clínicas, consultorios, laboratorios, centros de imagenología y unidades
+              especializadas que busquen organizar el mantenimiento y la trazabilidad de su
+              tecnología médica.
             </p>
-
-            <dl className="mt-10 grid grid-cols-2 gap-6">
-              {capabilities.map((c) => (
-                <div key={c.label} className="border-l-2 border-teal pl-4">
-                  <dt className="font-heading text-base font-bold text-navy-ink">{c.label}</dt>
-                  <dd className="mt-1 text-sm leading-snug text-slate">{c.detail}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           <div className="lg:col-span-7">
             <ul className="grid overflow-hidden rounded-[6px] border border-line bg-white sm:grid-cols-2">
-              {sectors.map((sector, i) => (
+              {institutionTypes.map((sector, i) => (
                 <Reveal
                   as="li"
                   key={sector}
