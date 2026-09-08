@@ -6,12 +6,9 @@ export function Approach() {
     <section id="proceso" className="scroll-mt-20 bg-navy-ink py-20 text-white lg:py-28">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
         <div className="max-w-2xl">
-          <div className="flex items-center gap-3">
-            <span className="h-px w-8 bg-cyan" aria-hidden="true" />
-            <span className="eyebrow" style={{ color: "var(--color-cyan)" }}>
-              Proceso
-            </span>
-          </div>
+          <span className="eyebrow" style={{ color: "var(--color-cyan)" }}>
+            Proceso
+          </span>
           <h2 className="mt-5 text-[2rem] font-extrabold leading-tight text-white sm:text-[2.5rem]">
             De la solicitud a la evidencia final
           </h2>
@@ -21,7 +18,7 @@ export function Approach() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-[6px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-[4px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, i) => (
             <Reveal
               key={step.index}

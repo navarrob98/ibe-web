@@ -230,8 +230,8 @@ export async function POST(request: Request) {
       subject: sanitizeLine(`Nuevo registro de interés — ${submission.name}`, 150),
       text: lines.join("\n"),
       html: `
-        <div style="font-family:Arial,sans-serif;color:#0c1626;max-width:560px">
-          <h2 style="color:#002460;margin:0 0 16px">Nuevo registro de interés</h2>
+        <div style="font-family:Arial,sans-serif;color:#0f2d4a;max-width:560px">
+          <h2 style="color:#0f2d4a;margin:0 0 16px">Nuevo registro de interés</h2>
           <table style="border-collapse:collapse;width:100%;font-size:14px">
             ${[
               ["Nombre", submission.name],
@@ -246,14 +246,14 @@ export async function POST(request: Request) {
             ]
               .map(
                 ([k, v]) =>
-                  `<tr><td style="padding:6px 12px 6px 0;color:#56616f">${k}</td><td style="padding:6px 0;font-weight:600">${escapeHtml(
+                  `<tr><td style="padding:6px 12px 6px 0;color:#46586b">${k}</td><td style="padding:6px 0;font-weight:600">${escapeHtml(
                     String(v)
                   )}</td></tr>`
               )
               .join("")}
           </table>
-          <p style="margin:18px 0 6px;color:#56616f;font-size:14px">Mensaje:</p>
-          <p style="white-space:pre-wrap;border-left:3px solid #0098a8;padding-left:12px;margin:0;font-size:15px">${escapeHtml(
+          <p style="margin:18px 0 6px;color:#46586b;font-size:14px">Mensaje:</p>
+          <p style="white-space:pre-wrap;border-left:3px solid #4fb7b6;padding-left:12px;margin:0;font-size:15px">${escapeHtml(
             submission.message
           )}</p>
         </div>`,

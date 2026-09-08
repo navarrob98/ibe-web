@@ -9,12 +9,9 @@ export function Cmms() {
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
         <div className="grid min-w-0 gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="min-w-0 lg:col-span-5">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-cyan" aria-hidden="true" />
-              <span className="eyebrow" style={{ color: "var(--color-cyan)" }}>
-                CMMS
-              </span>
-            </div>
+            <span className="eyebrow" style={{ color: "var(--color-cyan)" }}>
+              CMMS
+            </span>
             <h2 className="mt-5 text-[2rem] font-extrabold leading-tight text-white sm:text-[2.5rem]">
               Todo el historial técnico de tus equipos en un solo lugar
             </h2>

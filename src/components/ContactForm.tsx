@@ -90,9 +90,9 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="flex flex-col items-start rounded-[6px] border border-line bg-white p-8 sm:p-10"
+        className="flex flex-col items-start rounded-[4px] border border-line bg-white p-8 sm:p-10"
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal/10 text-teal">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-success/10 text-success">
           <IconCheck width={26} height={26} />
         </span>
         <h3
@@ -117,7 +117,7 @@ export function ContactForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="rounded-[6px] border border-line bg-white p-6 shadow-[var(--shadow-soft)] sm:p-9"
+      className="rounded-[4px] border border-line bg-white p-6 shadow-[var(--shadow-soft)] sm:p-9"
     >
       {/* honeypot anti-spam (oculto para personas, visible para bots) */}
       <div aria-hidden="true" className="absolute h-0 w-0 overflow-hidden">
@@ -286,7 +286,7 @@ export function ContactForm() {
             aria-required="true"
             aria-invalid={errors.consent ? "true" : undefined}
             aria-describedby={errors.consent ? "consent-error" : undefined}
-            className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-teal)]"
+            className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-aqua)]"
           />
           <span>
             Autorizo a <span className="font-medium text-navy-ink">IBEX Biomedical Solutions</span> a
@@ -298,14 +298,14 @@ export function ContactForm() {
           </span>
         </label>
         {errors.consent && (
-          <p id="consent-error" role="alert" className="mt-1.5 text-sm text-[#c0392b]">
+          <p id="consent-error" role="alert" className="mt-1.5 text-sm text-error">
             {errors.consent}
           </p>
         )}
       </div>
 
       {status === "error" && (
-        <p role="alert" className="mt-5 rounded border border-[#e0b4ae] bg-[#fbeeec] px-4 py-3 text-sm text-[#9c2f22]">
+        <p role="alert" className="mt-5 rounded border border-error/30 bg-error/10 px-4 py-3 text-sm text-error">
           {serverMessage}
         </p>
       )}
@@ -327,8 +327,8 @@ function inputClass(error?: string) {
   return [
     "w-full rounded border bg-white px-3.5 py-2.5 text-[0.95rem] text-navy-ink",
     "min-h-[44px] placeholder:text-slate-light transition-colors",
-    "focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal",
-    error ? "border-[#d98b81]" : "border-line",
+    "focus:outline-none focus:ring-2 focus:ring-aqua/40 focus:border-aqua",
+    error ? "border-error/60" : "border-line",
   ].join(" ");
 }
 
@@ -352,7 +352,7 @@ function Field({
       <label htmlFor={htmlFor} className="mb-1.5 flex items-center gap-2 text-sm font-medium text-navy-ink">
         {label}
         {required && (
-          <span aria-hidden="true" className="text-[#c0392b]">
+          <span aria-hidden="true" className="text-error">
             *
           </span>
         )}
@@ -360,7 +360,7 @@ function Field({
       </label>
       {children}
       {error && (
-        <p id={`${htmlFor}-error`} role="alert" className="mt-1.5 text-sm text-[#c0392b]">
+        <p id={`${htmlFor}-error`} role="alert" className="mt-1.5 text-sm text-error">
           {error}
         </p>
       )}

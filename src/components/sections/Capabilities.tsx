@@ -19,7 +19,7 @@ export function Capabilities() {
           </p>
         </div>
 
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-[6px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {capabilities.map((c, i) => (
             <Reveal
               as="li"

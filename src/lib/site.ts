@@ -12,7 +12,6 @@ export const site = {
   shortName: "IBEX",
   descriptor: "Ingeniería Biomédica de Excelencia",
   claim: "Soluciones inteligentes de tecnología para salvar vidas",
-  values: ["Ingeniería", "Precisión", "Confianza"],
   url: "https://ibexbiomedical.com",
   // Enlazado desde el header. Confirma que este subdominio esté desplegado
   // con una pantalla real (login) antes de publicar: un enlace roto aquí

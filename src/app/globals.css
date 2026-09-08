@@ -1,41 +1,49 @@
 @import "tailwindcss";
 
 /* ============================================================
-   IBE Biomedical Solutions — Design tokens
-   Paleta extraída de la guía de marca oficial.
+   IBEX Biomedical Solutions — Design tokens
+   Marca IBEX v2 (rebrand). Paleta y roles: brandkit
+   docs/CLAUDE-HANDOFF.md §3 + tokens/brand-tokens.css.
    ============================================================ */
 @theme {
   /* Marca — azules */
-  --color-navy: #002460;
-  --color-navy-deep: #001a47;
-  --color-navy-ink: #0a1730;
-  --color-royal: #002478;
-  --color-steel: #00549c;
+  --color-navy: #0f2d4a;        /* IBEX Navy — primario, texto, headings, nav, botón primario */
+  --color-navy-deep: #022754;   /* IBEX Deep Blue — variante oscura, gráficos, fondos 2º */
+  --color-navy-ink: #0a1730;    /* IBEX Dark — hero / secciones oscuras premium */
+  --color-royal: #022754;       /* alias de Deep Blue (compat.) */
+  --color-steel: #1f7593;       /* alias de Teal (compat.) */
 
-  /* Marca — acento tech (cruz / circuito) */
-  --color-teal: #0098a8;
-  --color-teal-bright: #00b3c6;
-  --color-cyan: #6cd8d8;
+  /* Marca — acento */
+  --color-teal: #1f7593;        /* IBEX Teal — enlaces, hover, información secundaria, gráficas */
+  --color-aqua: #4fb7b6;        /* IBEX Aqua — acento, focus rings, highlights, indicadores */
+  --color-teal-bright: #4fb7b6; /* alias de Aqua (compat.) */
+  --color-cyan: #4fb7b6;        /* acento sobre fondo oscuro (compat.) */
 
   /* Neutros */
-  --color-ink: #0c1626;
-  --color-slate: #56616f;
-  --color-slate-light: #8a94a1;
-  --color-line: #e3e9ef;
-  --color-line-soft: #eef2f6;
-  --color-paper: #f6f8fb;
-  --color-paper-2: #eaeff5;
-  --color-paper-warm: #f9fafc;
+  --color-ink: #0f2d4a;         /* texto sobre blanco = IBEX Navy */
+  --color-slate: #46586b;       /* texto secundario */
+  --color-slate-light: #6b7a8a; /* texto terciario / metadatos */
+  --color-line: #dde5ec;
+  --color-line-soft: #edf1f5;
+  --color-paper: #f5f8fb;       /* surface-soft */
+  --color-paper-2: #e9eff5;
+  --color-paper-warm: #f7fafc;
+
+  /* Estados funcionales (brandkit §3) */
+  --color-success: #16845b;
+  --color-error: #d14343;
+  --color-warning: #b7791f;
+  --color-info: #1f7593;
 
   /* Tipografía */
   --font-heading: var(--font-montserrat), "Segoe UI", system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-mono-jb), ui-monospace, "Cascadia Code", monospace;
 
-  /* Radios y sombras */
+  /* Radios y sombras — geometría angular, no redondeada */
   --radius-card: 4px;
-  --shadow-soft: 0 1px 2px rgba(10, 23, 48, 0.04), 0 8px 24px -12px rgba(10, 23, 48, 0.12);
-  --shadow-lift: 0 2px 4px rgba(10, 23, 48, 0.05), 0 18px 40px -18px rgba(10, 23, 48, 0.22);
+  --shadow-soft: 0 1px 2px rgba(10, 23, 48, 0.04), 0 10px 30px -14px rgba(10, 23, 48, 0.14);
+  --shadow-lift: 0 2px 4px rgba(10, 23, 48, 0.05), 0 22px 48px -20px rgba(10, 23, 48, 0.24);
 }
 
 @layer base {
@@ -59,12 +67,12 @@
   }
 
   ::selection {
-    background: var(--color-teal);
-    color: #fff;
+    background: var(--color-aqua);
+    color: var(--color-navy-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-teal);
+    outline: 2px solid var(--color-aqua);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -79,14 +87,25 @@
 }
 
 @layer components {
-  /* Etiqueta técnica monoespaciada — recurso de marca "blueprint" */
+  /* Etiqueta de sección — sans, sobria (menos ruido monoespaciado que la marca anterior) */
   .eyebrow {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-teal);
-    font-weight: 500;
+  }
+  /* Marca diagonal que evoca la "X" del símbolo */
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 0.85rem;
+    height: 2px;
+    margin-right: 0.6rem;
+    vertical-align: 0.15em;
+    background: var(--color-aqua);
+    transform: skewX(-24deg);
   }
 
   .eyebrow-index {
@@ -96,12 +115,32 @@
     color: var(--color-slate-light);
   }
 
-  /* Trama de retícula sutil tipo plano de ingeniería */
+  /* Trama de retícula sutil tipo plano de ingeniería — muy discreta */
   .blueprint-grid {
     background-image:
-      linear-gradient(to right, rgba(0, 36, 96, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 36, 96, 0.04) 1px, transparent 1px);
-    background-size: 46px 46px;
+      linear-gradient(to right, rgba(15, 45, 74, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 45, 74, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Corte diagonal discreto (lenguaje angular derivado de la X).
+     Aplícalo a un contenedor con fondo propio. */
+  .clip-tr { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); }
+  .clip-bl { clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px); }
+
+  /* Filo diagonal de acento — línea fina inclinada */
+  .diagonal-accent {
+    position: relative;
+  }
+  .diagonal-accent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    height: 3px;
+    background: var(--color-aqua);
+    transform: skewX(-24deg);
   }
 
   .btn {
@@ -119,11 +158,12 @@
     line-height: 1;
     cursor: pointer;
   }
+  /* Botón primario = Navy (brandkit §3: no aqua) */
   .btn-primary { background: var(--color-navy); color: #fff; }
   .btn-primary:hover { background: var(--color-navy-deep); transform: translateY(-1px); }
 
   .btn-accent { background: var(--color-teal); color: #fff; }
-  .btn-accent:hover { background: var(--color-teal-bright); transform: translateY(-1px); }
+  .btn-accent:hover { background: var(--color-navy); transform: translateY(-1px); }
 
   .btn-ghost {
     border: 1px solid var(--color-line);
@@ -144,7 +184,7 @@
   }
 
   .link-underline {
-    background-image: linear-gradient(var(--color-teal), var(--color-teal));
+    background-image: linear-gradient(var(--color-aqua), var(--color-aqua));
     background-size: 0% 1.5px;
     background-position: 0 100%;
     background-repeat: no-repeat;
@@ -190,11 +230,11 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.66em;
-  width: 6px;
-  height: 6px;
-  border-radius: 1px;
-  background: var(--color-teal);
+  top: 0.62em;
+  width: 8px;
+  height: 2px;
+  background: var(--color-aqua);
+  transform: skewX(-24deg);
 }
 .legal-prose a {
   color: var(--color-navy);

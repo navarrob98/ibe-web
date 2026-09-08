@@ -1,14 +1,23 @@
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 
-const valueDetails: Record<string, string> = {
-  Ingeniería:
-    "El servicio se diseña con rigor de ingeniería biomédica: procedimientos documentados y decisiones basadas en datos técnicos.",
-  Precisión:
-    "La instrumentación y los procedimientos de verificación están pensados para dejar cada dato registrado y consultable.",
-  Confianza:
-    "El modelo se construye sobre transparencia y documentación verificable, no sobre promesas sin evidencia.",
-};
+const pillars: { label: string; detail: string }[] = [
+  {
+    label: "Ingeniería",
+    detail:
+      "El servicio se diseña con rigor de ingeniería biomédica: procedimientos documentados y decisiones basadas en datos técnicos.",
+  },
+  {
+    label: "Precisión",
+    detail:
+      "La instrumentación y los procedimientos de verificación están pensados para dejar cada dato registrado y consultable.",
+  },
+  {
+    label: "Trazabilidad",
+    detail:
+      "Cada intervención queda enlazada al expediente digital del equipo: qué se hizo, cuándo y con qué evidencia.",
+  },
+];
 
 export function About() {
   return (
@@ -30,7 +39,7 @@ export function About() {
               intervención.
             </p>
 
-            <blockquote className="mt-9 border-l-2 border-teal pl-5">
+            <blockquote className="mt-9 border-l-2 border-aqua pl-5">
               <p className="font-heading text-xl font-semibold leading-snug text-navy">
                 “{site.claim}.”
               </p>
@@ -38,19 +47,17 @@ export function About() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="grid gap-px overflow-hidden rounded-[6px] border border-line bg-line">
-              {site.values.map((value, i) => (
+            <div className="grid gap-px overflow-hidden rounded-[4px] border border-line bg-line">
+              {pillars.map((pillar, i) => (
                 <Reveal
-                  key={value}
+                  key={pillar.label}
                   delay={i * 80}
                   className="flex gap-6 bg-white p-7 sm:p-9"
                 >
                   <span className="font-mono text-sm text-teal">0{i + 1}</span>
                   <div>
-                    <h3 className="text-xl font-bold text-navy-ink">{value}</h3>
-                    <p className="mt-2 max-w-md leading-relaxed text-slate">
-                      {valueDetails[value]}
-                    </p>
+                    <h3 className="text-xl font-bold text-navy-ink">{pillar.label}</h3>
+                    <p className="mt-2 max-w-md leading-relaxed text-slate">{pillar.detail}</p>
                   </div>
                 </Reveal>
               ))}

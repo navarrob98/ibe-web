@@ -5,15 +5,23 @@ import { site } from "@/lib/site";
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-line bg-white">
-      <div className="absolute inset-0 blueprint-grid opacity-70" aria-hidden="true" />
-      <div className="absolute right-0 top-0 hidden h-full w-px bg-line lg:block lg:left-[58%]" aria-hidden="true" />
+      <div className="absolute inset-0 blueprint-grid" aria-hidden="true" />
+      <div
+        className="absolute right-0 top-0 hidden h-full w-px bg-line lg:block lg:left-[58%]"
+        aria-hidden="true"
+      />
+      {/* Filo diagonal derivado de la X — muy discreto */}
+      <div
+        className="pointer-events-none absolute -right-24 -top-24 hidden h-72 w-72 rotate-45 border-y-2 border-aqua/25 lg:block"
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto grid max-w-[1180px] gap-14 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-24">
         {/* Columna editorial */}
         <div className="lg:col-span-7 lg:pr-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/[0.06] px-3.5 py-1.5">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden="true" />
-            <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-navy">
+          <div className="inline-flex items-center gap-2 rounded-full border border-aqua/40 bg-aqua/[0.08] px-3.5 py-1.5">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-aqua" aria-hidden="true" />
+            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-navy">
               Próximo inicio de operaciones en Tijuana y Baja California
             </span>
           </div>
@@ -22,7 +30,10 @@ export function Hero() {
             Tecnología médica segura, disponible y{" "}
             <span className="relative whitespace-nowrap text-navy">
               documentada
-              <span className="absolute -bottom-1 left-0 h-[3px] w-full bg-teal" aria-hidden="true" />
+              <span
+                className="absolute -bottom-1 left-0 h-[3px] w-full skew-x-[-24deg] bg-aqua"
+                aria-hidden="true"
+              />
             </span>
           </h1>
 
@@ -59,7 +70,7 @@ export function Hero() {
 function RecordPreviewPanel() {
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded-[6px] border border-navy/15 bg-navy-ink shadow-[0_30px_60px_-30px_rgba(0,26,71,0.55)]">
+      <div className="overflow-hidden rounded-[4px] border border-navy/15 bg-navy-ink shadow-[0_30px_60px_-30px_rgba(10,23,48,0.55)]">
         {/* barra superior del panel */}
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-cyan">
