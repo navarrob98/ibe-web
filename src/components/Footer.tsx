@@ -12,22 +12,15 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Image
-              src="/brand/logo-horizontal-light.png"
+              src="/brand/ibex-wordmark-white.svg"
               alt="IBEX Biomedical Solutions"
-              width={1200}
-              height={300}
-              className="h-11 w-auto"
+              width={276}
+              height={100}
+              className="h-8 w-auto"
             />
-            <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-white/65">
+            <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-white/65">
               {site.descriptor}. {site.claim}.
             </p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-              {site.values.map((v) => (
-                <span key={v} className="eyebrow" style={{ color: "var(--color-cyan)" }}>
-                  {v}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="md:col-span-3">

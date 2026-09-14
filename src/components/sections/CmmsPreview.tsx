@@ -17,9 +17,9 @@ const TABS: { key: TabKey; label: string }[] = [
 const AUTOPLAY_MS = 4200;
 
 const toneClass: Record<Tone, string> = {
-  success: "border-teal/30 bg-teal/10 text-teal",
-  warning: "border-[#c9a227]/30 bg-[#c9a227]/10 text-[#a3811d]",
-  info: "border-cyan/30 bg-cyan/10 text-navy",
+  success: "border-success/30 bg-success/10 text-success",
+  warning: "border-warning/30 bg-warning/10 text-warning",
+  info: "border-aqua/40 bg-aqua/10 text-teal",
   neutral: "border-line text-slate-light",
 };
 
@@ -218,7 +218,7 @@ export function CmmsPreview() {
         Datos demostrativos. No corresponden a hospitales, clientes ni pacientes reales.
       </div>
 
-      <div className="overflow-hidden rounded-[6px] border border-white/10 bg-white shadow-[0_30px_60px_-30px_rgba(0,26,71,0.55)]">
+      <div className="overflow-hidden rounded-[4px] border border-white/10 bg-white shadow-[0_30px_60px_-30px_rgba(10,23,48,0.55)]">
         {/* barra superior de la app */}
         <div className="flex items-center justify-between border-b border-line bg-paper px-5 py-3">
           <div className="flex items-center gap-2">

@@ -27,12 +27,13 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#002460",
+  themeColor: "#0f2d4a",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   applicationName: site.name,
+  manifest: "/site.webmanifest",
   title: {
     default: "IBEX Biomedical Solutions | Gestión biomédica en Tijuana",
     template: `%s — ${site.name}`,

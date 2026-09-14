@@ -20,7 +20,7 @@ export function Sectors() {
           </div>
 
           <div className="lg:col-span-7">
-            <ul className="grid overflow-hidden rounded-[6px] border border-line bg-white sm:grid-cols-2">
+            <ul className="grid overflow-hidden rounded-[4px] border border-line bg-white sm:grid-cols-2">
               {institutionTypes.map((sector, i) => (
                 <Reveal
                   as="li"

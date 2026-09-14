@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="285" height="220" viewBox="640 225 285 220" xml:space="preserve">
+<desc>Created with Fabric.js 6.7.1</desc>
+<defs>
+</defs>
+<g transform="matrix(0.9679 0 0 1 780.8564 331.2457)" id="Capa_1">
+<linearGradient id="SVGID_19127" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -790.6343 -219.1162)" x1="659.1097" y1="219.1162" x2="922.1589" y2="219.1162">
+<stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity: 1" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.8" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.8394" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.8822" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.9192" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.9491" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.9721" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.9882" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 0.9975" />
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity: 1" />
+</linearGradient>
+<polygon style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="131.5246,101.8987 57.2963,101.9728 -9.0583,29.6865 -131.5246,-101.8356 -56.1959,-101.9728 -33.8895,-77.8211 131.5246,101.8987 " />
+</g>
+<g transform="matrix(0.9679 0 0 1 705.3677 384.2787)" id="Capa_1">
+<linearGradient id="SVGID_19128" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -712.6422 -272.1492)" x1="649.4924" y1="272.1493" x2="775.7919" y2="272.1493">
+<stop offset="22.8%" style="stop-color:rgb(255,255,255);stop-opacity: 1" />
+<stop offset="99.83%" style="stop-color:rgb(255,255,255);stop-opacity: 1" />
+</linearGradient>
+<polygon style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="7.838,48.8136 -63.1498,48.841 28.4422,-48.8409 63.1498,-11.2226 7.838,48.8136 " />
+</g>
+<g transform="matrix(0.9679 0 0 1 849.7063 275.1739)" id="Capa_1">
+<polygon style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="15.3146,3.192 -25.1219,45.8897 -61.1506,6.9883 -9.9522,-45.8898 61.1506,-45.7983 15.3146,3.192 " />
+</g>
+</svg>
