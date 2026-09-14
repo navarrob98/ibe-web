@@ -19,9 +19,7 @@ export const site = {
   portalUrl: "https://portal.ibexbiomedical.com",
 
   contact: {
-    // Correo temporal sobre el dominio anterior; migrar a @ibexbiomedical.com
-    // solo cuando ese buzón esté confirmado y operativo (ver DEPLOY-CPANEL.md).
-    email: "contacto@ibebiomedic.com",
+    email: "contacto@ibexbiomedical.com",
     phone: "+52 664 504 3057",
     phoneHref: "+526645043057",
     location: "Tijuana, Baja California, México",

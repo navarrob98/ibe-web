@@ -55,12 +55,12 @@ export function Header() {
       <div className="mx-auto flex h-[68px] max-w-[1300px] items-center justify-between px-5 sm:px-8">
         <Link href="/" className="shrink-0" aria-label="Inicio — IBEX Biomedical Solutions">
           <Image
-            src="/brand/ibex-wordmark.svg"
+            src="/brand/ibex-lockup.svg"
             alt="IBEX Biomedical Solutions"
-            width={276}
-            height={100}
+            width={790}
+            height={328}
             priority
-            className="h-8 w-auto sm:h-9"
+            className="h-11 w-auto sm:h-12"
           />
         </Link>
 

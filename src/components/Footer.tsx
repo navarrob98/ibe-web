@@ -12,11 +12,11 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Image
-              src="/brand/ibex-wordmark-white.svg"
+              src="/brand/ibex-lockup-white.svg"
               alt="IBEX Biomedical Solutions"
-              width={276}
-              height={100}
-              className="h-8 w-auto"
+              width={790}
+              height={328}
+              className="h-14 w-auto"
             />
             <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-white/65">
               {site.descriptor}. {site.claim}.

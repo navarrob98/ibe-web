@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { IconArrowUpRight } from "@/components/Icons";
 import { site } from "@/lib/site";
 
@@ -10,11 +11,13 @@ export function Hero() {
         className="absolute right-0 top-0 hidden h-full w-px bg-line lg:block lg:left-[58%]"
         aria-hidden="true"
       />
-      {/* Filo diagonal derivado de la X — muy discreto */}
+      {/* Marca de agua del símbolo — presencia de marca en el hero */}
       <div
-        className="pointer-events-none absolute -right-24 -top-24 hidden h-72 w-72 rotate-45 border-y-2 border-aqua/25 lg:block"
+        className="pointer-events-none absolute -right-28 -top-28 hidden h-[560px] w-[560px] opacity-[0.2] lg:block"
         aria-hidden="true"
-      />
+      >
+        <Image src="/brand/ibex-symbol.svg" alt="" fill sizes="560px" className="object-contain" />
+      </div>
 
       <div className="relative mx-auto grid max-w-[1180px] gap-14 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-24">
         {/* Columna editorial */}
