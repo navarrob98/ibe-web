@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cmmsFeatures } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 import { IconCheck } from "@/components/Icons";
@@ -5,8 +6,19 @@ import { CmmsPreview } from "@/components/sections/CmmsPreview";
 
 export function Cmms() {
   return (
-    <section id="cmms" className="scroll-mt-20 border-b border-white/10 bg-navy-ink py-20 text-white lg:py-28">
-      <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+    <section
+      id="cmms"
+      className="relative scroll-mt-20 overflow-hidden border-b border-white/10 bg-navy-ink py-20 text-white lg:py-28"
+    >
+      {/* Marca de agua del símbolo — presencia de marca al hilo del scroll */}
+      <div
+        className="pointer-events-none absolute -bottom-32 -right-24 hidden h-[440px] w-[440px] opacity-[0.07] lg:block"
+        aria-hidden="true"
+      >
+        <Image src="/brand/ibex-symbol-white.svg" alt="" fill sizes="440px" className="object-contain" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1180px] px-5 sm:px-8">
         <div className="grid min-w-0 gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="min-w-0 lg:col-span-5">
             <span className="eyebrow" style={{ color: "var(--color-cyan)" }}>
